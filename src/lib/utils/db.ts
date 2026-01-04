@@ -2,7 +2,7 @@ import * as k from 'kysely';
 
 declare module '@thetinkerinc/sprout/db' {
 	interface DB {
-		posts: PostTable
+		posts: PostTable;
 	}
 
 	export interface PostTable {
