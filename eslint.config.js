@@ -17,6 +17,7 @@ export default defineConfig(
 			'build/',
 			'.svelte-kit/',
 			'dist/',
+			'data/',
 			'src/lib/components/ui/',
 			'src/lib/paraglide/',
 			'.trigger/',
@@ -50,6 +51,12 @@ export default defineConfig(
 		rules: {
 			'svelte/require-each-key': 'off',
 			'svelte/prefer-writable-derived': 'off'
+		}
+	},
+	{
+		files: ['migrations/*.ts'],
+		rules: {
+			'@typescript-eslint/no-explicit-any': 'off'
 		}
 	},
 	{
