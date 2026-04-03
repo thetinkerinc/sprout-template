@@ -11,7 +11,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"cleanup": "run-s cf-typegen i18n format lint check",
-		"i18n": "paraglide-js compile",
+		"i18n": "paraglide-js compile --outdir ./src/lib/paraglide",
 		"format": "prettier --write . '!data/**'",
 		"lint": "eslint .",
 		"prepare": "svelte-kit sync",
