@@ -5,19 +5,24 @@
 	"type": "module",
 	"scripts": {
 		"build": "vite build",
+
 		"dev": "run-s dev:db dev:web",
 		"dev:db": "docker compose up -d",
 		"dev:web": "vite dev",
+
+		"studio": "dotenvx run -- drizzle-kit studio",
+
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+
 		"cleanup": "run-s cf-typegen i18n format lint check",
 		"i18n": "paraglide-js compile --outdir ./src/lib/paraglide",
 		"format": "prettier --write . '!data/**'",
 		"lint": "eslint .",
+		"cf-typegen": "wrangler types src/worker-configuration.d.ts",
+
 		"prepare": "svelte-kit sync",
-		"preview": "vite preview",
-		"studio": "dotenvx run -- drizzle-kit studio",
-		"cf-typegen": "wrangler types src/worker-configuration.d.ts"
+		"preview": "vite preview"
 	},
 	"devDependencies": {
 		"@dotenvx/dotenvx": "^1.59.1",
